@@ -1,9 +1,5 @@
 # lildavegoth Projects
 
-Based on the page you shared, here is a draft for your README file that highlights your Kakoi Kiraku project. I've structured it to be informative and welcoming for visitors to your GitHub.
-
----
-
 Welcome to my Projects base! 👋
 
 Hello! I'm lildavegoth, a creator and developer focused on building stylish, useful digital content and tools.
