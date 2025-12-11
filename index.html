@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lildavegoth · Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --accent-color: #C1FC32;
+            --accent-dark: #9bc726;
+            --bg-black: #000000;
+            --bg-dark: #1a1a1a;
+            --bg-card: rgba(30, 30, 30, 0.7);
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --radius-small: 12px;
+            --radius-medium: 20px;
+            --radius-large: 28px;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-primary);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(193, 252, 50, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 80% 20%, rgba(193, 252, 50, 0.03) 0%, transparent 20%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+
+        /* iOS-Style Blur Effects */
+        .blur-background {
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            background-color: rgba(22, 22, 24, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Header Styles */
+        header {
+            padding: var(--spacing-lg) 0;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-color);
+            padding: 3px;
+        }
+
+        .username {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--accent-color), #e8f8b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* iOS Control Center Inspired Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-medium);
+            padding: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(40, 40, 40, 0.8);
+        }
+
+        .stat-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-small);
+            background: rgba(193, 252, 50, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .stat-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2px;
+        }
+
+        .stat-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Project Cards */
+        .projects-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-large);
+            padding: var(--spacing-lg);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(193, 252, 50, 0.3);
+            box-shadow: 0 10px 30px rgba(193, 252, 50, 0.1);
+        }
+
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-medium);
+            object-fit: cover;
+            margin-bottom: var(--spacing-sm);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-dark);
+            padding: 10px;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-title a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: var(--spacing-md);
+            font-size: 0.95rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .tech-tag {
+            background: rgba(193, 252, 50, 0.1);
+            color: var(--accent-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Quick Links */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .link-card {
+            background: var(--bg-dark);
+            border-radius: var(--radius-medium);
+            padding: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .link-card:hover {
+            background: rgba(193, 252, 50, 0.1);
+            transform: scale(1.05);
+        }
+
+        .link-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: var(--spacing-xs);
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .link-text {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: var(--spacing-xl);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .username {
+                font-size: 2rem;
+            }
+        }
+
+        /* iOS-Specific Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Profile -->
+        <header class="fade-in">
+            <div class="profile-section">
+                <!-- Replace with your actual avatar image -->
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="lildavegoth" class="avatar">
+                <div>
+                    <h1 class="username">lildavegoth</h1>
+                    <p class="tagline">Developer · Creator · Innovator</p>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card blur-background fade-in delay-1">
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>12+</h3>
+                        <p>Projects</p>
+                    </div>
+                </div>
+                <div class="stat-card blur-background fade-in delay-2">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>47</h3>
+                        <p>GitHub Stars</p>
+                    </div>
+                </div>
+                <div class="stat-card blur-background fade-in delay-3">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>2023</h3>
+                        <p>Active Since</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Projects Section -->
+        <section>
+            <div class="projects-header">
+                <h2 class="section-title fade-in">Featured Projects</h2>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card blur-background fade-in delay-1">
+                    <!-- Replace with your project icon (WebP or PNG) -->
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Nexus App" class="project-icon">
+                    <div class="project-title">
+                        <h3>Nexus App</h3>
+                        <a href="https://lildavegoth.github.io/nexus-app">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">
+                        A productivity application with seamless cross-device synchronization and intuitive task management.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card blur-background fade-in delay-2">
+                    <!-- Replace with your project icon (WebP or PNG) -->
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Quantum UI" class="project-icon">
+                    <div class="project-title">
+                        <h3>Quantum UI</h3>
+                        <a href="https://lildavegoth.github.io/quantum-ui">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">
+                        A design system and component library with futuristic aesthetics and smooth animations.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Sass</span>
+                        <span class="tech-tag">WebGL</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card blur-background fade-in delay-3">
+                    <!-- Replace with your project icon (WebP or PNG) -->
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Echo API" class="project-icon">
+                    <div class="project-title">
+                        <h3>Echo API</h3>
+                        <a href="https://lildavegoth.github.io/echo-api">
+                            Live Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <p class="project-description">
+                        A real-time communication API with WebSocket support and end-to-end encryption.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links Section -->
+        <section>
+            <h2 class="section-title fade-in">Quick Links</h2>
+            <div class="quick-links">
+                <a href="https://github.com/lildavegoth" class="link-card blur-background fade-in delay-1" target="_blank">
+                    <!-- Replace with your icon (WebP format recommended) -->
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="link-icon">
+                    <span class="link-text">GitHub Profile</span>
+                </a>
+                <a href="https://lildavegoth.github.io/blog" class="link-card blur-background fade-in delay-2" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2092/2092655.png" alt="Blog" class="link-icon">
+                    <span class="link-text">Tech Blog</span>
+                </a>
+                <a href="https://lildavegoth.github.io/resume" class="link-card blur-background fade-in delay-3" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Resume" class="link-icon">
+                    <span class="link-text">Resume</span>
+                </a>
+                <a href="https://lildavegoth.github.io/contact" class="link-card blur-background fade-in delay-4" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2343/2343694.png" alt="Contact" class="link-icon">
+                    <span class="link-text">Contact</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="fade-in">
+            <div class="social-links">
+                <a href="https://twitter.com/lildavegoth" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/in/lildavegoth" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/lildavegoth" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:hello@lildavegoth.dev"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>© 2023 lildavegoth. All projects featured on this site are open source.</p>
+            <p style="margin-top: 8px; font-size: 0.8rem; color: #666;">
+                Built with iOS 16 design aesthetics • Accent color: #C1FC32
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple script to enhance interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click animation to project cards
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const link = this.querySelector('a');
+                    if (link) {
+                        window.open(link.href, '_blank');
+                    }
+                });
+            });
+
+            // Update stats with random increment animation (optional)
+            const statNumbers = document.querySelectorAll('.stat-info h3');
+            statNumbers.forEach(stat => {
+                const originalText = stat.textContent;
+                if (originalText.includes('+')) {
+                    const number = parseInt(originalText);
+                    let counter = 0;
+                    const increment = number / 20;
+                    const timer = setInterval(() => {
+                        counter += increment;
+                        stat.textContent = Math.floor(counter) + '+';
+                        if (counter >= number) {
+                            stat.textContent = originalText;
+                            clearInterval(timer);
+                        }
+                    }, 50);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
