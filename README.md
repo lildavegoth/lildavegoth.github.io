@@ -10,9 +10,9 @@ Kakoi Kiraku is my creative hub for design resources and tutorials. It represent
 
 What You'll Find Here:
 
-· App Icon Packs: Custom, stylized icons to personalize your devices.
-· Design Assets: A collection of banners, posters, and graphical elements.
-· Helpful Tutorials: Guides and walkthroughs for various creative and technical topics.
+- App Icon Packs: Custom, stylized icons to personalize your devices.
+- Design Assets: A collection of banners, posters, and graphical elements.
+- Helpful Tutorials: Guides and walkthroughs for various creative and technical topics.
 
 About This Project:
 
@@ -20,9 +20,9 @@ This category is built with revamped content for a better, more engaging experie
 
 🔗 Live Links & Contact
 
-· Explore Kakoi Kiraku: Visit the Teletype page
-· Find More: For a broader collection of my work, check out my Homepage (link can be added here).
-· Feedback & Issues: If you encounter any bugs, dead links, or have questions, feel free to contact me!
+- Explore Kakoi Kiraku: Visit the Teletype page
+- Find More: For a broader collection of my work, check out my Homepage (link can be added here).
+- Feedback & Issues: If you encounter any bugs, dead links, or have questions, feel free to contact me!
 
 ---
 
