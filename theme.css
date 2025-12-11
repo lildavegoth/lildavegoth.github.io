@@ -13,3 +13,33 @@
 .project-icon {
     filter: invert(0) !important;
 }
+
+/* STOP ALL browser dark mode interference */
+html {
+    color-scheme: only dark !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+img, video, svg, canvas {
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+/* Force your specific colors */
+body {
+    background-color: #000000 !important;
+    color: #f5f5f7 !important;
+}
+
+/* Copy Text Better feedback */
+.copied-feedback {
+    background: rgba(193, 252, 50, 0.25) !important;
+    transform: scale(1.05) !important;
+    transition: all 0.3s ease !important;
+}
+
+.copied-feedback .link-text {
+    color: var(--accent-color) !important;
+    font-weight: 600;
+}
