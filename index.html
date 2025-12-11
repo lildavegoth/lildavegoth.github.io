@@ -177,8 +177,9 @@
             object-fit: cover;
             margin-bottom: var(--spacing-sm);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            background: var(--bg-dark);
+            background: var(--bg-dark);            
             padding: 10px;
+            filter: invert(0) !important;
         }
 
         .project-title {
@@ -307,7 +308,7 @@
             }
         }
 
-        /* iOS-Specific Animations */
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -321,24 +322,24 @@
         .delay-2 { animation-delay: 0.2s; opacity: 0; }
         .delay-3 { animation-delay: 0.3s; opacity: 0; }
         .delay-4 { animation-delay: 0.4s; opacity: 0; }
-	</style>        
+	</style>
+
 <body>
     <div class="container">
         <!-- Header with Profile -->
         <header class="fade-in">
             <div class="profile-section">
-                <img src="https://raw.githubusercontent.com/lildavegoth/lildavegoth.github.io/refs/heads/main/stuff/avatar.webp" alt="lildavegoth" class="avatar">
+                <img src="avatar.webp" alt="lildavegoth" class="avatar">
                 <div> 
 					<h1 class="lildavegoth">lildavegoth</h1>
                     <p class="tagline">Designer ✦ Creator ✦ Innovator</p>
                 </div>
             </div>
-
             <!-- Stats Cards -->
             <div class="stats-grid">
                 <div class="stat-card blur-background fade-in delay-1">
                     <div class="stat-icon">
-                        <i class="fas fa-code"></i>
+                        <img src="downloads.webp" alt="download“ height="30" width="30">
                     </div>
                     <div class="stat-info">
                         <h3>10000+</h3>
@@ -347,7 +348,7 @@
                 </div>
                 <div class="stat-card blur-background fade-in delay-2">
                     <div class="stat-icon">
-                        <i class="fas fa-star"></i>
+                        <img src="pinterest.webp" alt="star“ height="30" width="30">
                     </div>
                     <div class="stat-info">
                         <h3>300000+</h3>
@@ -356,7 +357,7 @@
                 </div>
                 <div class="stat-card blur-background fade-in delay-3">
                     <div class="stat-icon">
-                        <i class="fas fa-calendar-alt"></i>
+                        <img src="calendar.webp" alt="calendar“ height="30" width="30">
                     </div>
                     <div class="stat-info">
                         <h3>2016</h3>
@@ -375,7 +376,7 @@
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card blur-background fade-in delay-1">
-                    <img src="https://raw.githubusercontent.com/lildavegoth/lildavegoth.github.io/refs/heads/main/stuff/app%20icon.png" alt="Kakoi Kiraku" class="project-icon">
+                    <img src="app%20icon.webp" "alt="Kakoi Kiraku" class="project-icon">
                     <div class="project-title">
                         <h3>Kakoi Kiraku</h3>
                         <a href="https://lildavegoth.github.io/nexus-app">
@@ -508,4 +509,4 @@
         });
     </script>
 </body>
-	</html>
+</html>
