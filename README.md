@@ -1,34 +1,29 @@
-# lildavegoth Projects
+# lildavegoth
 
-Welcome to my Projects base! 👋
+Welcome mate! Ready for the infinite imaginations? ![See more](https://lildavegoth.github.io/)
 
-Hello! I'm lildavegoth, a creator and developer focused on building stylish, useful digital content and tools.
+Hello! I'm lildavegoth, a creator and designer focused on giving you ideas that you can't ever imagine, useful digital content and tools.
 
-🎨 Featured Project: Kakoi Kiraku
-
-Kakoi Kiraku is my creative hub for design resources and tutorials. It represents a fresh start with a new name, style, and design philosophy.
-
-What You'll Find Here:
-
-- App Icon Packs: Custom, stylized icons to personalize your devices.
-- Design Assets: A collection of banners, posters, and graphical elements.
-- Helpful Tutorials: Guides and walkthroughs for various creative and technical topics.
-
-About This Project:
-
-This category is built with revamped content for a better, more engaging experience. It's part of my new website system designed to deliver the latest and most useful content directly.
-
-🔗 Live Links & Contact
-
-- Explore Kakoi Kiraku: Visit the Teletype page
-- Find More: For a broader collection of my work, check out my Homepage (link can be added here).
-- Feedback & Issues: If you encounter any bugs, dead links, or have questions, feel free to contact me!
+**Featured Project — Kakoi Kiraku**
+**Kakoi Kiraku** is my creative hub for design resources and tutorials.
 
 ---
 
-🛠️ Other Projects
+**What You'll Find** — ✦
+- **App Icon Packs**: A curated collection of black dark app icons designed for modern interfaces. Each icon is crafted with attention to detail and consistency across the pack.
+- **Web Tools**: Free to use useful web tools, go take a look before you judge.
+- **Inspirations**: Prepare yourself to get inspired by the ideas itself.
 
-Beyond Kakoi Kiraku, my GitHub hosts a variety of other development projects, tools, and experiments. Browse my repositories to see more.
+**About This Project** — ✦
+It's part of my new website system designed to deliver the latest and most useful content directly.
+
+**Live Links & Contact** — ✦
+- **Feedback & Issues**: If you encounter any bugs, dead links, or have questions, feel free to ![contact me](https://t.me/lildavegoth)!
+
+---
+
+### Other Projects
+Beyond **Kakoi Kiraku**, my GitHub hosts a variety of other development projects, tools, and experiments. ![Browse the web page to see more](https://lildavegoth.github.io/).
 
 ---
 
