@@ -1,6 +1,6 @@
 # lildavegoth
 
-Welcome mate! Ready for the infinite imaginations? ![See more](https://lildavegoth.github.io/)
+Welcome mate! Ready for the infinite imaginations? [See more](https://lildavegoth.github.io/)
 
 Hello! I'm lildavegoth, a creator and designer focused on giving you ideas that you can't ever imagine, useful digital content and tools.
 
@@ -18,12 +18,12 @@ Hello! I'm lildavegoth, a creator and designer focused on giving you ideas that 
 It's part of my new website system designed to deliver the latest and most useful content directly.
 
 **Live Links & Contact** — ✦
-- **Feedback & Issues**: If you encounter any bugs, dead links, or have questions, feel free to ![contact me](https://t.me/lildavegoth)!
+- **Feedback & Issues**: If you encounter any bugs, dead links, or have questions, feel free to[contact me](https://t.me/lildavegoth)!
 
 ---
 
 ### Other Projects
-Beyond **Kakoi Kiraku**, my GitHub hosts a variety of other development projects, tools, and experiments. ![Browse the web page to see more](https://lildavegoth.github.io/).
+Beyond **Kakoi Kiraku**, my GitHub hosts a variety of other development projects, tools, and experiments. [Browse the web page to see more](https://lildavegoth.github.io/).
 
 ---
 
