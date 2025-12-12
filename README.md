@@ -15,7 +15,7 @@ Hello! I'm lildavegoth, a creator and designer focused on giving you ideas that 
 - **Inspirations**: Prepare yourself to get inspired by the ideas itself.
 
 **About This Project** — ✦
-It's part of my new website system designed to deliver the latest and most useful content directly.
+- It's part of my new website system designed to deliver the latest and most useful content directly.
 
 **Live Links & Contact** — ✦
 - **Feedback & Issues**: If you encounter any bugs, dead links, or have questions, feel free to[contact me](https://t.me/lildavegoth)!
@@ -23,7 +23,7 @@ It's part of my new website system designed to deliver the latest and most usefu
 ---
 
 ### Other Projects
-Beyond **Kakoi Kiraku**, my GitHub hosts a variety of other development projects, tools, and experiments. [Browse the web page to see more](https://lildavegoth.github.io/).
+Beyond **Kakoi Kiraku**, my GitHub hosts a variety of other development projects, tools, and experiments. [Browse the web page to see more](https://lildavegoth.github.io/)
 
 ---
 
