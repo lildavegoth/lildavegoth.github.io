@@ -300,6 +300,43 @@
                 font-size: 2rem;
             }
         }
+        
+        /* Web Tools - Simple Pill Cards */
+		.web-tools-card {
+		    background: var(--bg-card);
+		    border-radius: var(--radius-medium);
+		    padding: 18px 28px;
+		    border: 1px solid rgba(255, 255, 255, 0.05);
+		    transition: all 0.3s ease;
+		    margin-bottom: 12px;
+		}
+		
+		.web-tools-card:hover {
+		    transform: translateY(-2px);
+		    border-color: rgba(193, 252, 50, 0.3);
+		    background: rgba(40, 40, 40, 0.8);
+		}
+		
+		.web-tools-card .project-icon,
+		.web-tools-card .project-tech {
+		    display: none;
+		}
+		
+		.web-tools-card .project-title {
+		    margin-bottom: 8px;
+		}
+		
+		.web-tools-card .project-title h3 {
+		    font-size: 1.1rem;
+		    font-weight: 600;
+		}
+		
+		.web-tools-card .project-description {
+		    font-size: 0.9rem;
+		    line-height: 1.4;
+		    margin-bottom: 0;
+		    color: var(--text-secondary);
+		}
 
         /* Animations */
         @keyframes fadeIn {
@@ -370,7 +407,7 @@
         <!-- Projects Section -->
         <section>
             <div class="projects-header">
-                <h2 style="margin-top:-120px; class="section-title fade-in">Featured Projects</h2>
+                <h2 style="margin-top:-120px; class="section-title fade-in">Highlight Projects</h2>
             </div>
 
             <div style=margin-top:-50px; class="projects-grid">
@@ -411,72 +448,62 @@
                         <span class="tech-tag">Wallpapers</span>
                         <span class="tech-tag">Designs</span>
                     </div>
-                </div>
-
-                <!-- Project 3 -->
-                	<div class="project-card blur-background fade-in delay-2">
-                    <img src="https://raw.githubusercontent.com/lildavegoth/lildavegoth.github.io/refs/heads/main/stuff/appflowy.webp" alt="AppFlowy" class="project-icon">
-                    <div class="project-title">
-                        <h3>AppFlowy JSON Converter</h3>
-                        <a href="https://lildavegoth.github.io/Appflowy-JSON-to-Markdown-Converter/">
-                            Try <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">
-                        A simple web tool for converts JSON files from AppFlowy backups into markdown.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Markdown</span>
-                        <span class="tech-tag">AppFlowy</span>
-                        <span class="tech-tag">JSON</span>
-                    </div>
-                </div>
+                </div> 
                 
-                <!-- Project 4 -->
-                <div class="project-card blur-background fade-in delay-3">
-                    <img src="https://raw.githubusercontent.com/lildavegoth/lildavegoth.github.io/refs/heads/main/stuff/empty.webp" alt="HTML Generator" class="project-icon">
-                    <div class="project-title">
-                        <h3>HTML Generator</h3>
-                        <a href="https://lildavegoth.github.io/html-generator">
-                            Try It <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">
-                        A powerful tool that converts plain text into clean HTML code. Use the toolbar to add formatting, lists, tables, and more. Perfect for bloggers, developers, and content creators.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Narkdown</span>
-                        <span class="tech-tag">Formatting</span>
-                        <span class="tech-tag">HTML</span>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="project-card blur-background fade-in delay-3">
-                    <img src="https://raw.githubusercontent.com/lildavegoth/lildavegoth.github.io/refs/heads/main/stuff/empty.webp" alt="Mockup" class="project-icon">
-                    <div class="project-title">
-                        <h3>Mockups Generator</h3>
-                        <a href="https://lildavegoth.github.io/posters">
-                            Try It <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">
-                        Upload 2 screenshots and generate a professional mockup for your device. Perfect for app showcases, portfolio presentations, and design reviews.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Device</span>
-                        <span class="tech-tag">Screenshots</span>
-                        <span class="tech-tag">Showcase</span>
-                    </div>
-                </div>
-            </div>
+                <!-- Web Tools Section -->
+				<div class="web-tools-section">
+				    <div class="projects-header">
+				        <h2 class="section-title fade-in" style="margin-bottom: -5px;">Web Tools</h2>
+				    </div>
+				    
+				    <div class="web-tools-container">
+				        <!-- Project 3 -->
+				        <div class="project-card blur-background fade-in delay-2 web-tools-card">
+				            <div class="project-title">
+				                <h3>AppFlowy JSON Converter</h3>
+				                <a href="https://lildavegoth.github.io/Appflowy-JSON-to-Markdown-Converter/">
+				                    Try <i class="fas fa-external-link-alt"></i>
+				                </a>
+				            </div>
+				            <p class="project-description">
+				                A simple web tool for converts JSON files from AppFlowy backups into markdown.
+				            </p>
+				        </div>
+				        
+				        <!-- Project 4 -->
+				        <div class="project-card blur-background fade-in delay-4 web-tools-card">
+				            <div class="project-title">
+				                <h3>Mockups Generator</h3>
+				                <a href="https://lildavegoth.github.io/posters">
+				                    Try <i class="fas fa-external-link-alt"></i>
+				                </a>
+				            </div>
+				            <p class="project-description">
+				                Upload 2 screenshots and generate a professional mockup for your device.
+				            </p>
+				        </div>
+				        
+				        <!-- Project 5 -->
+				        <div class="project-card blur-background fade-in delay-3 web-tools-card">
+				            <div class="project-title">
+				                <h3>HTML Generator</h3>
+				                <a href="https://lildavegoth.github.io/html-generator">
+				                    Try <i class="fas fa-external-link-alt"></i>
+				                </a>
+				            </div>
+				            <p class="project-description">
+				                A powerful tool that converts plain text into clean HTML code. Use the toolbar to add formatting, lists, tables, and more.
+				            </p>
+				        </div>
+				    </div>
+				</div>
         </section>
 
         <!-- Footer -->
         <footer class="fade-in">
             <div class="social-links">
-                <a href="https://twitter.com/lildavegoth" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com/dave_goth" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/lildavegoth"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/dave_goth"><i class="fab fa-instagram"></i></a>
             </div>
             <p>© 2025 lildavegoth — Jakarta.</p>
             <p style="margin-top: 8px; font-size: 0.8rem; color: #666;">
@@ -486,38 +513,41 @@
     </div>
 
     <script>
-        // Simple script to enhance interactivity
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add click animation to project cards
-            const projectCards = document.querySelectorAll('.project-card');
-            projectCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const link = this.querySelector('a');
-                    if (link) {
-                        window.open(link.href, '_blank');
-                    }
-                });
-            });
-
-            // Update stats with random increment animation (optional)
-            const statNumbers = document.querySelectorAll('.stat-info h3');
-            statNumbers.forEach(stat => {
-                const originalText = stat.textContent;
-                if (originalText.includes('+')) {
-                    const number = parseInt(originalText);
-                    let counter = 0;
-                    const increment = number / 20;
-                    const timer = setInterval(() => {
-                        counter += increment;
-                        stat.textContent = Math.floor(counter) + '+';
-                        if (counter >= number) {
-                            stat.textContent = originalText;
-                            clearInterval(timer);
-                        }
-                    }, 50);
-                }
-            });
-        });
-    </script>
+	    // Simple script to enhance interactivity
+	    document.addEventListener('DOMContentLoaded', function() {
+	        // Remove the click event that opens links in new tabs
+	        // We'll let links work normally (same tab)
+	
+	        // Update stats with random increment animation (optional)
+	        const statNumbers = document.querySelectorAll('.stat-info h3');
+	        statNumbers.forEach(stat => {
+	            const originalText = stat.textContent;
+	            if (originalText.includes('+')) {
+	                const number = parseInt(originalText);
+	                let counter = 0;
+	                const increment = number / 20;
+	                const timer = setInterval(() => {
+	                    counter += increment;
+	                    stat.textContent = Math.floor(counter) + '+';
+	                    if (counter >= number) {
+	                        stat.textContent = originalText;
+	                        clearInterval(timer);
+	                    }
+	                }, 50);
+	            }
+	        });
+	        
+	        // Optional: Add a subtle click effect to project cards
+	        const projectCards = document.querySelectorAll('.project-card');
+	        projectCards.forEach(card => {
+	            card.addEventListener('click', function() {
+	                this.style.transform = 'scale(0.98)';
+	                setTimeout(() => {
+	                    this.style.transform = '';
+	                }, 150);
+	            });
+	        });
+	    });
+	</script>
 </body>
 </html>
