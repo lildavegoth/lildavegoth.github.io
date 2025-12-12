@@ -4,7 +4,7 @@ Welcome mate! Ready for the infinite imaginations? [See more](https://lildavegot
 
 Hello! I'm lildavegoth, a creator and designer focused on giving you ideas that you can't ever imagine, useful digital content and tools.
 
-**Featured Project — Kakoi Kiraku**
+**Featured Project — Kakoi Kiraku**: 
 **Kakoi Kiraku** is my creative hub for design resources and tutorials.
 
 ---
@@ -18,7 +18,7 @@ Hello! I'm lildavegoth, a creator and designer focused on giving you ideas that 
 - It's part of my new website system designed to deliver the latest and most useful content directly.
 
 **Live Links & Contact** — ✦
-- **Feedback & Issues**: If you encounter any bugs, dead links, or have questions, feel free to[contact me](https://t.me/lildavegoth)!
+- **Feedback & Issues**: If you encounter any bugs, dead links, or have questions, feel free to [contact me](https://t.me/lildavegoth)!
 
 ---
 
