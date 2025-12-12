@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakoi Kiraku | Browser Home</title>
+    <meta name="color-scheme" content="dark">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --accent-color: #C1FC32;
+            --accent-dark: #9bc726;
+            --bg-black: #000000;
+            --bg-dark: #1a1a1a;
+            --bg-card: rgba(30, 30, 30, 0.7);
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --radius-small: 12px;
+            --radius-medium: 20px;
+            --radius-large: 28px;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-primary);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(193, 252, 50, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 80% 20%, rgba(193, 252, 50, 0.03) 0%, transparent 20%);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md);
+        }
+
+        .blur-background {
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            background-color: rgba(22, 22, 24, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-xl);
+        }
+
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-color);
+            padding: 3px;
+        }
+
+        .username {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            width: 100%;
+            text-align: center;
+        }
+
+        .greeting {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, var(--accent-color) 0%, #9bc726 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .time-date {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* Search Container */
+        .search-container {
+            width: 100%;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-form {
+            position: relative;
+        }
+
+        .search-input {
+		    width: 100%;
+		    padding: var(--spacing-md) 80px var(--spacing-md) 60px; /* Increased right padding for button */
+		    background: var(--bg-card);
+		    border: 1px solid rgba(255, 255, 255, 0.1);
+		    border-radius: var(--radius-large);
+		    color: var(--text-primary);
+		    font-size: 1.1rem;
+		    transition: all 0.3s ease;
+		    backdrop-filter: blur(10px);
+		    overflow: hidden; /* Prevents text overflow */
+		    text-overflow: ellipsis; /* Shows ... if text is too long */
+		    white-space: nowrap; /* Keeps text on one line */
+		}
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(193, 252, 50, 0.2);
+            background: rgba(30, 30, 30, 0.9);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: var(--spacing-lg);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .search-button {
+		    position: absolute;
+		    right: 15px; /* Slightly more space from edge */
+		    top: 50%;
+		    transform: translateY(-50%);
+		    background: var(--accent-color);
+		    color: var(--bg-black);
+		    border: none;
+		    padding: 10px 20px;
+		    border-radius: var(--radius-medium);
+		    font-weight: 600;
+		    cursor: pointer;
+		    transition: all 0.3s ease;
+		    z-index: 2; /* Ensure button stays above */
+		}
+
+        .search-button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        /* Quick Links */
+        .quick-links-section {
+            width: 100%;
+            margin-top: -85px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        /* Updated Quick Links - Pill Shape */
+		.links-grid {
+		    display: grid;
+		    grid-template-columns: repeat(4, 1fr);
+		    gap: 8px; /* Smaller gap */
+		    margin-top: var(--spacing-md);
+		    margin-bottom: var(--spacing-lg);
+		}
+		
+		.link-card {
+		    background: var(--bg-dark);
+		    border-radius: 50px; /* Changed to pill shape */
+		    padding: 8px 16px; /* Adjusted padding: smaller vertical, moderate horizontal */
+		    display: flex;
+		    flex-direction: row; /* Changed to row for pill layout */
+		    align-items: center;
+		    justify-content: center; /* Center horizontally */
+		    text-align: center;
+		    text-decoration: none;
+		    color: var(--text-primary);
+		    transition: all 0.3s ease;
+		    border: 1px solid rgba(255, 255, 255, 0.05);
+		    min-height: 1px; /* Much smaller height for pill */
+		    max-height: 1px; /* Limit max height */
+		    width: 100%; /* Full width of grid cell */
+		}
+		
+		.link-card:hover {
+		    background: rgba(193, 252, 50, 0.15);
+		    transform: translateY(-2px); /* Smaller hover lift */
+		    border-color: rgba(193, 252, 50, 0.4);
+		    box-shadow: 0 4px 12px rgba(193, 252, 50, 0.2);
+		}
+		
+		.link-text {
+		    font-size: 0.85rem; /* Adjusted text size */
+		    font-weight: 500;
+		    white-space: nowrap; /* Prevent text wrapping */
+		    overflow: hidden;
+		    text-overflow: ellipsis; /* Add ... if text is too long */
+		}
+		
+
+        /* Bottom Banner Container */
+        .banner-container {
+            width: 100%;
+            margin-top: var(--spacing-xl);
+        }
+
+        .banner-inner {
+            background: var(--bg-card);
+            border-radius: var(--radius-large);
+            padding: var(--spacing-md);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .banner-inner:hover {
+            border-color: rgba(193, 252, 50, 0.3);
+            box-shadow: 0 10px 30px rgba(193, 252, 50, 0.1);
+        }
+
+        .banner-image {
+            width: 100%;
+            border-radius: var(--radius-medium);
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: var(--spacing-xl);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+		    .links-grid {
+		        grid-template-columns: repeat(4, 1fr);
+		        gap: 6px;
+		    }
+		    
+		    .link-card {
+		        padding: 6px 12px;
+		        min-height: 36px;
+		        max-height: 40px;
+		        border-radius: 40px; /* Slightly less rounded on mobile */
+		    }
+		    
+		    .link-text {
+		        font-size: 0.75rem;
+		    }
+		    
+		    .link-card img.link-icon {
+		        width: 16px;
+		        height: 16px;
+		        margin-right: 4px;
+		    }
+		}
+		
+		@media (max-width: 480px) {
+		    .links-grid {
+		        grid-template-columns: repeat(4, 1fr);
+		        gap: 4px;
+		    }
+		    
+		    .link-card {
+		        padding: 5px 10px;
+		        min-height: 32px;
+		        max-height: 36px;
+		        border-radius: 30px;
+		    }
+		    
+		    .link-text {
+		        font-size: 0.7rem;
+		    }
+		}
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+    </style>
+</head>
+<body style="margin-top: 200px">
+    <div class="container">
+    	<!-- Top Banner Container -->
+        <div class="banner-container fade-in delay-4">
+            <div class="banner-inner blur-background">
+                <img src="https://raw.githubusercontent.com/lildavegoth/lildavegoth.github.io/refs/heads/main/stuff/4ever.webp" 
+                     alt="Kakoi Kiraku Banner" 
+                     class="banner-image">
+            </div>
+        </div>
+
+            <!-- Search Box -->
+            <div class="search-container fade-in delay-2">
+                <div style="margin-top: -20px; class="search-box">
+                    <form class="search-form" id="searchForm">
+                        <div class="search-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <input type="text" 
+                               class="search-input blur-background" 
+                               id="searchInput" 
+                               placeholder="Search the web privately" 
+                               autocomplete="off"
+                               autofocus>
+                        <button type="submit" class="search-button">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Quick Links Grid -->
+			<div class="quick-links-section fade-in delay-3">
+			    <div class="links-grid">
+			    <!-- Row 1 -->
+			    <a href="https://mail.google.com/" class="link-card blur-background">
+			        <span class="link-text">Email</span>
+			    </a>
+			    <a href="https://github.com/lildavegoth/" class="link-card blur-background">
+			        <span class="link-text">GitHub</span>
+			    </a>
+			    <a href="https://www.reddit.com/" class="link-card blur-background">
+			        <span class="link-text">Reddit</span>
+			    </a>
+			    <a href="https://www.instagram.com/" class="link-card blur-background">
+			        <span class="link-text">Instagram</span>
+			    </a>
+			    
+			    <!-- Row 2 -->
+			    <a href="https://lildavegoth.github.io/" class="link-card blur-background">
+			        <span class="link-text">Home</span>
+			    </a>
+			    <a href="https://translate.google.com/" class="link-card blur-background">
+			        <span class="link-text">Translate</span>
+			    </a>
+			    <a href="https://twitter.com/" class="link-card blur-background">
+			        <span class="link-text">X</span>
+			    </a>
+			    <a href="https://www.youtube.com/" class="link-card blur-background">
+			        <span class="link-text">YouTube</span>
+			    </a>
+			</div>
+			<p style="text-align: center; font-size: 0.8rem; color: #666;">
+                Kakoi Kiraku Browser Homepage is using StartPage Search Engine for better privacy browsing.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="fade-in">
+            <div class="social-links">
+                <a href="https://twitter.com/lildavegoth" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/dave_goth" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>© 2025 lildavegoth | Kakoi Kiraku Browser Homepage</p>
+            <p style="margin-top: 8px; font-size: 0.8rem; color: #666;">
+                Conveys the Idea of a Protected and Inspiring Space for Creative Expression.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update greeting based on time
+            function updateGreeting() {
+                const hour = new Date().getHours();
+                const greetingElement = document.getElementById('greeting');
+                let greeting = '';
+                
+                if (hour < 12) greeting = 'Good Morning';
+                else if (hour < 18) greeting = 'Good Afternoon';
+                else greeting = 'Good Evening';
+                
+                greetingElement.textContent = greeting;
+            }
+
+            // Update time and date
+            function updateTimeDate() {
+                const now = new Date();
+                const options = { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                };
+                
+                const timeDateElement = document.getElementById('timeDate');
+                timeDateElement.textContent = now.toLocaleDateString('en-US', options);
+            }
+
+            // Search functionality
+			const searchForm = document.getElementById('searchForm');
+			const searchInput = document.getElementById('searchInput');
+			
+			searchForm.addEventListener('submit', function(e) {
+			    e.preventDefault();
+			    const query = searchInput.value.trim();
+			    
+			    if (query) {
+			        // Startpage search URL with query
+			        const startpageUrl = `https://startpage.com/do/search?q=${encodeURIComponent(query)}`;
+			        // Open in the same tab
+			        window.location.href = startpageUrl;
+			    }
+			});
+
+            // Keyboard shortcut: Ctrl + K to focus search
+            document.addEventListener('keydown', function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    searchInput.focus();
+                }
+                
+                // Escape to blur search
+                if (e.key === 'Escape') {
+                    searchInput.blur();
+                }
+            });
+
+            // Initial updates
+            updateGreeting();
+            updateTimeDate();
+            
+            // Update time every second
+            setInterval(updateTimeDate, 1000);
+            
+            // Update greeting every hour
+            setInterval(updateGreeting, 3600000);
+        });
+    </script>
+</body>
+</html>
