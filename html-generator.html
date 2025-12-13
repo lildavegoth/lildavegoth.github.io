@@ -67,15 +67,6 @@
             margin-bottom: var(--spacing-lg);
         }
 
-        .avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent-color);
-            padding: 3px;
-        }
-
         .username {
             font-size: 2.5rem;
             font-weight: 700;
@@ -466,7 +457,6 @@
         <!-- Header with Profile -->
         <header class="fade-in">
             <div class="profile-section">
-                <img src="https://raw.githubusercontent.com/lildavegoth/lildavegoth.github.io/refs/heads/main/stuff/avatar.webp" alt="lildavegoth" class="avatar">
                 <div> 
                     <h1 class="username">HTML Generator</h1>
                     <p class="tagline">Convert Text to HTML with Ease</p>
@@ -653,8 +643,8 @@ If you already done, click “Select All” button and scroll to HTML Code then 
         <!-- Footer -->
         <footer class="fade-in">
             <div class="social-links">
-                <a href="https://twitter.com/lildavegoth" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com/dave_goth" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/lildavegoth"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/dave_goth"><i class="fab fa-instagram"></i></a>
             </div>
             <p>© 2025 lildavegoth | HTML Generator Tool</p>
             <p style="margin-top: 8px; font-size: 0.8rem; color: #666;">
@@ -1081,7 +1071,7 @@ If you already done, click “Select All” button and scroll to HTML Code then 
 	        text = text.replace(/_(.*?)_/g, '<u>$1</u>');
 	        
 	        // Process links [text](url)
-	        text = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
+	        text = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>');
 	        
 	        // Process images ![alt](src)
 	        text = text.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" style="max-width: 100%; height: auto;">');

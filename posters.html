@@ -68,15 +68,6 @@
             margin-bottom: var(--spacing-lg);
         }
 
-        .avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent-color);
-            padding: 3px;
-        }
-
         .username {
             font-size: 2.5rem;
             font-weight: 700;
@@ -406,6 +397,15 @@
             border-color: rgba(255, 255, 255, 0.1);
         }
         
+        .main-poster img {
+		    max-width: 100%;
+		    max-height: 100%;
+		    object-fit: contain;
+		    border-radius: var(--radius-medium);
+		    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+		    transition: transform 0.5s ease, opacity 0.4s ease; /* ⬅️ ADD opacity transition */
+		}
+        
         .poster-info {
             text-align: center;
             margin-bottom: var(--spacing-lg);
@@ -468,7 +468,6 @@
         <!-- Header -->
         <header class="fade-in">
             <div class="profile-section">
-                <img src="https://raw.githubusercontent.com/lildavegoth/lildavegoth.github.io/refs/heads/main/stuff/avatar.webp" alt="lildavegoth" class="avatar">
                 <div> 
                     <h1 class="username">Posters Gallery</h1>
                     <p class="tagline">Digital Art Collections</p>
@@ -524,8 +523,7 @@
         <!-- Instagram Button -->
 		<a href="https://instagram.com/dave_goth" 
 		   style="margin-top: -15px"
-		   class="accent-btn blur-background fade-in" 
-		   target="_blank">
+		   class="accent-btn blur-background fade-in">
 		    <div class="accent-btn-content">
 		        <i class="fab fa-instagram"></i>
 		        <span>More Posters</span>
@@ -586,8 +584,8 @@
         <!-- Footer -->
         <footer class="fade-in">
             <div class="social-links">
-                <a href="https://twitter.com/lildavegoth" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com/dave_goth" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/lildavegoth"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/dave_goth"><i class="fab fa-instagram"></i></a>
             </div>
             <p>© 2025 lildavegoth | Posters Gallery</p>
             <p style="margin-top: 8px; font-size: 0.8rem; color: #666;">
@@ -663,21 +661,22 @@
             let currentIndex = 0;
             
             // Function to update the main poster display
-            function updatePoster(index) {
-                const poster = posters[index];
-                
-                // Update main image with fade effect
-                mainPoster.style.opacity = '0';
-                setTimeout(() => {
-                    mainPoster.src = poster.image;
-                    mainPoster.alt = poster.title;
-                    mainPoster.style.opacity = '1';
-                    mainPoster.style.transform = 'scale(1.02)';
-                    
-                    setTimeout(() => {
-                        mainPoster.style.transform = 'scale(1)';
-                    }, 300);
-                }, 200);
+			function updatePoster(index) {
+			    const poster = posters[index];
+			    
+			    // Smooth fade transition
+			    mainPoster.style.opacity = '0.3'; // Partially fade
+			    
+			    setTimeout(() => {
+			        mainPoster.src = poster.image;
+			        mainPoster.alt = poster.title;
+			        mainPoster.style.opacity = '1'; // Fade back in
+			        mainPoster.style.transform = 'scale(1.02)';
+			        
+			        setTimeout(() => {
+			            mainPoster.style.transform = 'scale(1)';
+			        }, 300);
+			    }, 150); // Shorter delay
                 
                 // Update text info
                 posterTitle.textContent = poster.title;

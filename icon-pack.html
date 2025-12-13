@@ -67,19 +67,10 @@
             margin-bottom: var(--spacing-lg);
         }
 
-        .avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent-color);
-            padding: 3px;
-        }
-
         .username {
 		    font-size: 2.5rem;
 		    font-weight: 700;
-		    color: ##ffffff; /* Your new solid dark green color */
+		    color: #ffffff; /* Solid dark green color */
 		    margin-bottom: 4px;
 		}
 
@@ -455,9 +446,8 @@
         <!-- Header with Profile -->
         <header class="fade-in">
             <div class="profile-section">
-                <img src="https://raw.githubusercontent.com/lildavegoth/lildavegoth.github.io/refs/heads/main/stuff/avatar.webp" alt="lildavegoth" class="avatar">
                 <div> 
-                    <h1 class="username">Kakoi Kiraku</h1>
+                    <h1 class="username">Kakoi Kiraku — Icon Pack</h1>
                     <p class="tagline">Icon Pack Showcase</p>
                 </div>
             </div>
@@ -619,8 +609,25 @@
 		            <span class="tech-tag">ZIP Archive</span>
 		        </div>
 		    </div>
+		    
+		    <!-- Replace your entire form with this: -->
+			<form id="requestForm" action="https://formsubmit.co/lildavegoth@proton.me" method="POST">
+			    <!-- Add hidden fields -->
+			    <input type="hidden" name="_subject" value="Icon Pack Permission Request">
+			    <input type="hidden" name="_template" value="table">
+			    <input type="hidden" name="_captcha" value="false">
+			    <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+			    
+			    <!-- Your form fields stay the same -->
+			    <input type="text" name="name" placeholder="Your Name" required>
+			    <input type="email" name="email" placeholder="Your Email" required>
+			    <input type="text" name="subject" placeholder="Request Subject" required>
+			    <textarea name="message" placeholder="Your request..." required></textarea>
+			    
+			    <button type="submit">Send Request</button>
+			</form>
 		</div>
-        </section>
+		</section>
         
         <!-- Footer -->
         <footer class="fade-in">
@@ -676,8 +683,9 @@
                 image.addEventListener('click', function() {
                     const imgSrc = this.querySelector('img').src;
                     window.open(imgSrc, '_blank');
-                });
-            });
+                    }
+		    });
+		}
         });
     </script>
 </body>
